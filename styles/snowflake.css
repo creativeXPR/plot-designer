@@ -1,0 +1,402 @@
+/* Snowflake Method Specific Styles */
+
+/* Step Progress Indicator */
+.step-progress {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-lg);
+}
+
+.step-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-full);
+    background: var(--color-border);
+    transition: all var(--transition-base);
+}
+
+.step-dot.active {
+    background: var(--color-primary);
+    transform: scale(1.2);
+}
+
+.step-dot.completed {
+    background: var(--color-success);
+}
+
+/* Snowflake Visualizer */
+.snowflake-visualizer {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto var(--space-xl);
+}
+
+.snowflake-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background: var(--color-primary);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-light);
+    font-weight: 600;
+    z-index: 2;
+}
+
+.snowflake-branch {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0 0;
+    height: 2px;
+    background: var(--color-border);
+    transition: all var(--transition-slow);
+}
+
+.snowflake-branch.active {
+    background: var(--color-primary);
+    height: 3px;
+}
+
+.snowflake-node {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: var(--radius-full);
+    background: var(--color-surface-glass);
+    border: 2px solid var(--color-border);
+    transform: translate(-50%, -50%);
+    transition: all var(--transition-base);
+    cursor: pointer;
+}
+
+.snowflake-node:hover {
+    border-color: var(--color-primary);
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+.snowflake-node.active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-text-light);
+    transform: translate(-50%, -50%) scale(1.3);
+}
+
+/* Step Connection Lines */
+.step-connection {
+    position: relative;
+    margin-left: 36px; /* Icon width + gap */
+}
+
+.step-connection::before {
+    content: '';
+    position: absolute;
+    left: -28px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-border);
+}
+
+.step-item:last-child .step-connection::before {
+    bottom: 50%;
+}
+
+.step-item.active .step-connection::before {
+    background: var(--color-primary);
+}
+
+/* Step Completion */
+.step-completion {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    margin-top: var(--space-xs);
+}
+
+.completion-check {
+    width: 16px;
+    height: 16px;
+    border-radius: var(--radius-full);
+    border: 2px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-base);
+}
+
+.completion-check.checked {
+    background: var(--color-success);
+    border-color: var(--color-success);
+    color: var(--color-text-light);
+}
+
+.completion-check.checked::after {
+    content: '✓';
+    font-size: 10px;
+    animation: checkmark 0.3s ease-out;
+}
+
+/* Word Count Progress */
+.word-progress {
+    width: 100%;
+    height: 4px;
+    background: var(--color-border);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    margin-top: var(--space-xs);
+}
+
+.word-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    border-radius: var(--radius-full);
+    transition: width var(--transition-base);
+}
+
+/* Template Badges */
+.template-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    border-radius: var(--radius-full);
+    background: var(--color-surface-glass);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    margin-right: var(--space-xs);
+    margin-bottom: var(--space-xs);
+}
+
+.template-badge.hero {
+    background: rgba(168, 156, 200, 0.1);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.template-badge.snowflake {
+    background: rgba(183, 214, 193, 0.1);
+    border-color: var(--color-success);
+    color: var(--color-success);
+}
+
+.template-badge.three-act {
+    background: rgba(255, 213, 128, 0.1);
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+/* Step Templates */
+.step-template {
+    background: var(--color-surface-glass-2);
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    margin-bottom: var(--space-md);
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.step-template:hover {
+    border-color: var(--color-primary);
+    background: var(--color-surface-glass);
+}
+
+.step-template h4 {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--space-xs);
+}
+
+.step-template p {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    margin-bottom: 0;
+}
+
+/* Export Format Options */
+.format-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: var(--space-md);
+    margin: var(--space-lg) 0;
+}
+
+.format-option {
+    padding: var(--space-md);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-md);
+    text-align: center;
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.format-option:hover {
+    border-color: var(--color-primary);
+    background: var(--color-surface-glass);
+}
+
+.format-option.selected {
+    border-color: var(--color-primary);
+    background: var(--color-surface-glass-active);
+}
+
+.format-icon {
+    font-size: 2rem;
+    margin-bottom: var(--space-sm);
+}
+
+.format-option h4 {
+    font-size: var(--font-size-base);
+    margin-bottom: 2px;
+}
+
+.format-option p {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    margin-bottom: 0;
+}
+
+/* Focus Mode */
+.focus-mode {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--color-bg);
+    z-index: var(--z-modal);
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn var(--transition-slow);
+}
+
+.focus-header {
+    padding: var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.focus-content {
+    flex: 1;
+    padding: var(--space-xl);
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Snowflake Method Description */
+.method-description {
+    background: var(--color-surface-glass);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    margin-bottom: var(--space-2xl);
+}
+
+.method-description h3 {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--color-primary);
+}
+
+.method-description h3::before {
+    content: '❄️';
+}
+
+.method-description p {
+    color: var(--color-text-muted);
+    line-height: 1.8;
+}
+
+.method-steps {
+    display: grid;
+    gap: var(--space-lg);
+}
+
+.method-step {
+    background: var(--color-surface-glass);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    border-left: 4px solid var(--color-primary);
+}
+
+.method-step h4 {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+}
+
+.method-step-number {
+    width: 24px;
+    height: 24px;
+    background: var(--color-primary);
+    color: var(--color-text-light);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+}
+
+/* Responsive Snowflake */
+@media (max-width: 768px) {
+    .snowflake-visualizer {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .snowflake-core {
+        width: 32px;
+        height: 32px;
+        font-size: var(--font-size-sm);
+    }
+    
+    .snowflake-node {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .step-connection {
+        margin-left: 32px;
+    }
+    
+    .step-connection::before {
+        left: -24px;
+    }
+    
+    .format-options {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .snowflake-visualizer {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .format-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .method-description {
+        padding: var(--space-lg);
+    }
+    
+    .method-step {
+        padding: var(--space-md);
+    }
+}

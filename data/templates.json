@@ -1,0 +1,81 @@
+[
+    {
+        "id": "basic-snowflake",
+        "name": "Basic Snowflake",
+        "description": "Standard Snowflake Method structure for any story",
+        "icon": "❄️",
+        "color": "#A89CC8",
+        "steps": [
+            { "id": "summary", "title": "One-Sentence Summary", "icon": "💡" },
+            { "id": "characters", "title": "Main Characters", "icon": "👤" },
+            { "id": "scenes", "title": "Key Scenes", "icon": "🎬" },
+            { "id": "notes", "title": "Additional Notes", "icon": "📝" }
+        ],
+        "prompts": {
+            "summary": "Write a one-sentence summary of your entire story. Focus on the core conflict and character goal.",
+            "characters": "Describe your main characters, their roles, motivations, and character arcs.",
+            "scenes": "Outline the key scenes that drive your plot forward. Focus on major turning points.",
+            "notes": "Add any additional notes, themes, research, or ideas that don't fit in other categories."
+        }
+    },
+    {
+        "id": "heros-journey",
+        "name": "Hero's Journey",
+        "description": "Classic monomyth structure with 12 stages",
+        "icon": "🦸",
+        "color": "#FFD580",
+        "steps": [
+            { "id": "ordinary-world", "title": "Ordinary World", "icon": "🏠" },
+            { "id": "call-to-adventure", "title": "Call to Adventure", "icon": "📯" },
+            { "id": "refusal", "title": "Refusal of the Call", "icon": "🙅" },
+            { "id": "mentor", "title": "Meeting the Mentor", "icon": "🧙" },
+            { "id": "crossing", "title": "Crossing the Threshold", "icon": "🚪" },
+            { "id": "tests", "title": "Tests, Allies, Enemies", "icon": "⚔️" },
+            { "id": "approach", "title": "Approach to the Inmost Cave", "icon": "🏔️" },
+            { "id": "ordeal", "title": "The Ordeal", "icon": "🔥" },
+            { "id": "reward", "title": "Reward", "icon": "🏆" },
+            { "id": "road-back", "title": "The Road Back", "icon": "🛣️" },
+            { "id": "resurrection", "title": "Resurrection", "icon": "🕊️" },
+            { "id": "return", "title": "Return with the Elixir", "icon": "🏡" }
+        ],
+        "prompts": {
+            "ordinary-world": "Introduce your hero in their ordinary world. What's missing from their life?",
+            "call-to-adventure": "What event calls your hero to adventure? What do they stand to gain or lose?",
+            "refusal": "Why does your hero initially refuse the call? What fears or obligations hold them back?",
+            "mentor": "Who guides your hero? What wisdom or gifts do they provide?",
+            "crossing": "What point of no return does your hero cross? How is their world different now?",
+            "tests": "What challenges does your hero face? Who helps and who hinders them?",
+            "approach": "How does your hero approach their greatest challenge? What preparations do they make?",
+            "ordeal": "What is the central crisis or ordeal? How does your hero face death (literal or metaphorical)?",
+            "reward": "What does your hero gain from surviving the ordeal? (Knowledge, object, power, etc.)",
+            "road-back": "How does your hero begin their return journey? What new challenges emerge?",
+            "resurrection": "What final test purifies your hero? How are they transformed?",
+            "return": "How does your hero return home changed? What elixir (literal or metaphorical) do they bring?"
+        }
+    },
+    {
+        "id": "three-act",
+        "name": "Three-Act Structure",
+        "description": "Classic beginning, middle, and end structure",
+        "icon": "🎭",
+        "color": "#B7D6C1",
+        "steps": [
+            { "id": "act1-setup", "title": "Act I: Setup", "icon": "🎬" },
+            { "id": "inciting-incident", "title": "Inciting Incident", "icon": "⚡" },
+            { "id": "act2-confrontation", "title": "Act II: Confrontation", "icon": "⚔️" },
+            { "id": "midpoint", "title": "Midpoint", "icon": "🎯" },
+            { "id": "act3-resolution", "title": "Act III: Resolution", "icon": "🎇" },
+            { "id": "climax", "title": "Climax", "icon": "🔥" },
+            { "id": "denouement", "title": "Denouement", "icon": "🕊️" }
+        ],
+        "prompts": {
+            "act1-setup": "Introduce characters, setting, and the status quo. What's the world like before everything changes?",
+            "inciting-incident": "What event disrupts the status quo and sets the story in motion?",
+            "act2-confrontation": "How does the protagonist struggle against obstacles? What do they learn?",
+            "midpoint": "What major event changes the direction of the story? How are the stakes raised?",
+            "act3-resolution": "How is the main conflict resolved? What is the new status quo?",
+            "climax": "What is the final, decisive confrontation? How does the protagonist prove their growth?",
+            "denouement": "How are loose ends tied up? What is life like for the characters now?"
+        }
+    }
+]
